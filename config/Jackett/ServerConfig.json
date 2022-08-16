@@ -1,3 +1,4 @@
 {
-  "APIKey": "qbittorrent"
+  "APIKey": "qbittorrent",
+  "FlareSolverrUrl": "https://verosolverr.herokuapp.com/"
 }
