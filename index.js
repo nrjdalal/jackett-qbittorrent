@@ -5,7 +5,7 @@ fs.rm(process.cwd() + '/config/Jackett/Indexers', { recursive: true }, (err) => 
   fs.mkdirSync(process.cwd() + '/config/Jackett/Indexers')
 })
 
-fs.readFile(process.cwd() + '/sites.txt', 'utf8', (err, res) => {
+fs.readFile(process.cwd() + '/sites/definitions', 'utf8', (err, res) => {
   if (err) throw err
 
   res = res.split('\n')
@@ -19,7 +19,8 @@ fs.readFile(process.cwd() + '/sites.txt', 'utf8', (err, res) => {
 
         response = response.data.split('  - ')[1].split('\n')[0]
 
-        response = `[
+        response = `
+[
   {
     "id": "sitelink",
     "type": "inputstring",
