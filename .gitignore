@@ -1,2 +1,4 @@
-node_modules
 yarn.lock
+
+Indexers/
+node_modules/
