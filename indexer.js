@@ -56,7 +56,7 @@ fs.readFile(process.cwd() + '/sites/indexers.txt', 'utf8', (err, res) => {
           }
         ]`
 
-        fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/${site}.json`, response, err)
+        fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/${site.toLowerCase()}.json`, response, err)
       } catch (err) {
         console.log(site, err)
       }
