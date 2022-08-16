@@ -21,8 +21,6 @@ fs.readFile(process.cwd() + '/sites/definitions', 'utf8', (err, res) => {
           /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
         )[0]
 
-        //         response = response.data.split('  - ')[1].split('\n')[0]
-
         console.log(response)
 
         response = `[
@@ -41,5 +39,7 @@ fs.readFile(process.cwd() + '/sites/definitions', 'utf8', (err, res) => {
     }
 
     common(site)
+
+    console.log('')
   }
 })
