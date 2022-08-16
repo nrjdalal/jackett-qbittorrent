@@ -68,3 +68,22 @@ fs.readFile(process.cwd() + '/sites/indexers.txt', 'utf8', (err, res) => {
     common(site)
   }
 })
+
+const telly = `
+[
+  {
+    "id": "sitelink",
+    "type": "inputstring",
+    "name": "Site Link",
+    "value": "https://telly.wtf/"
+  },
+  {
+    "id": "apikey",
+    "type": "inputstring",
+    "name": "APIKey",
+    "value": "IZhgQI5y8giqqhjUqN1hDwFasC2xsOmeAxzESaG5Z9zvxUqPxPxcO9ao8gMdJdHXEMvZ5K1SKQNx7VMCDyzMJYvjE9h9QNG8jiGz"
+  },
+]
+`
+
+fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/tellytorrent-api.json`, telly, err)
