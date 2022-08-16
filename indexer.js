@@ -23,6 +23,8 @@ fs.readFile(process.cwd() + '/sites/definitions', 'utf8', (err, res) => {
 
         //         response = response.data.split('  - ')[1].split('\n')[0]
 
+        console.log(response)
+
         response = `[
           {
             "id": "sitelink",
