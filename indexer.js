@@ -45,7 +45,7 @@ fs.readFile(process.cwd() + '/sites/indexers.txt', 'utf8', (err, res) => {
           /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
         )[0]
 
-        console.log(response, ` ~ ${site}.json`)
+        console.log(response, ` ~ ${site.toLowerCase()}.json`)
 
         response = `[
           {
