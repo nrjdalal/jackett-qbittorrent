@@ -4,8 +4,8 @@ curl https://raw.githubusercontent.com/qbittorrent/search-plugins/master/nova3/e
 
 cat >~/Library/Application\ Support/qBittorrent/nova3/engines/jackett.json <<jackett
 {
-  "api_key": "n4cv51k835sixcb9", 
+  "api_key": "qbittorrent", 
   "tracker_first": false, 
-  "url": "https://n4cv51k835sixcb9.herokuapp.com"
+  "url": "https://verosearch.herokuapp.com"
 }
 jackett
