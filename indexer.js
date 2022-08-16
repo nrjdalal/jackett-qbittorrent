@@ -21,7 +21,7 @@ fs.readFile(process.cwd() + '/sites/definitions', 'utf8', (err, res) => {
           /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
         )[0]
 
-        console.log(response)
+        console.log(response, ` ~ ${site}.json`)
 
         response = `[
           {
