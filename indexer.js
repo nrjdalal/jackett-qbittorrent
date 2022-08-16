@@ -67,9 +67,8 @@ fs.readFile(process.cwd() + '/sites/indexers.txt', 'utf8', (err, res) => {
 
     common(site)
   }
-})
 
-const telly = `
+  const telly = `
 [
   {
     "id": "sitelink",
@@ -86,4 +85,5 @@ const telly = `
 ]
 `
 
-fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/tellytorrent-api.json`, telly)
+  fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/tellytorrent-api.json`, telly)
+})
