@@ -33,7 +33,7 @@ fs.readFile(process.cwd() + '/sites/indexers.txt', 'utf8', (err, res) => {
                   )
                 } catch (err) {
                   if (err.code !== 200) {
-                    console.log('Next step')
+                    throw new Error('Next...!')
                   }
                 }
               }
