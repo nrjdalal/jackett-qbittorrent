@@ -39,7 +39,5 @@ fs.readFile(process.cwd() + '/sites/definitions', 'utf8', (err, res) => {
     }
 
     common(site)
-
-    console.log('')
   }
 })
