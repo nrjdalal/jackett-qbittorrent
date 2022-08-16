@@ -1,0 +1,8 @@
+[
+          {
+            "id": "sitelink",
+            "type": "inputstring",
+            "name": "Site Link",
+            "value": "https://solidtorrents.to/"
+          }
+        ]
