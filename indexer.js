@@ -19,18 +19,21 @@ fs.readFile(process.cwd() + '/sites/indexers.txt', 'utf8', (err, res) => {
           response = await axios.get(
             `https://raw.githubusercontent.com/Jackett/Jackett/master/src/Jackett.Common/Definitions/${site}.yml`
           )
+          response = response.data.split('links:')[1]
         } catch (err) {
           if (err.code !== 200) {
             try {
               response = await axios.get(
                 `https://raw.githubusercontent.com/Jackett/Jackett/master/src/Jackett.Common/Indexers/Feeds/${site}.cs`
               )
+              response = response.data.split('link:')[1]
             } catch (err) {
               if (err.code !== 200) {
                 try {
                   response = await axios.get(
                     `https://raw.githubusercontent.com/Jackett/Jackett/master/src/Jackett.Common/Indexers/${site}.cs`
                   )
+                  response = response.data.split('link:')[1]
                 } catch (err) {
                   if (err.code !== 200) {
                     throw new Error('Next...!')
@@ -41,7 +44,7 @@ fs.readFile(process.cwd() + '/sites/indexers.txt', 'utf8', (err, res) => {
           }
         }
 
-        response = response.data.match(
+        response = response.match(
           /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
         )[0]
 
