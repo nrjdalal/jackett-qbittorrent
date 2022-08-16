@@ -86,4 +86,4 @@ const telly = `
 ]
 `
 
-fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/tellytorrent-api.json`, telly, err)
+fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/tellytorrent-api.json`, telly)
