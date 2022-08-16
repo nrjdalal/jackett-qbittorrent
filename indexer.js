@@ -17,18 +17,20 @@ fs.readFile(process.cwd() + '/sites/definitions', 'utf8', (err, res) => {
           `https://raw.githubusercontent.com/Jackett/Jackett/master/src/Jackett.Common/Definitions/${site}.yml`
         )
 
-        response = response.data.split('  - ')[1].split('\n')[0]
+        response = response.data.match(
+          /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+        )[0]
 
-        response = `
-[
-  {
-    "id": "sitelink",
-    "type": "inputstring",
-    "name": "Site Link",
-    "value": "${response}"
-  }
-]
-        `
+        //         response = response.data.split('  - ')[1].split('\n')[0]
+
+        response = `[
+          {
+            "id": "sitelink",
+            "type": "inputstring",
+            "name": "Site Link",
+            "value": "${response}"
+          }
+        ]`
 
         fs.writeFileSync(process.cwd() + `/config/Jackett/Indexers/${site}.json`, response, err)
       } catch (err) {
