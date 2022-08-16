@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm i && node indexer.js && cd config/Jackett/Indexers && ls
+      - run: npm i && node indexer.js && cd config/Jackett/Indexers && echo && ls
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
